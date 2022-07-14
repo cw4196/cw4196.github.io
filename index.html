@@ -25,9 +25,7 @@
       (function(tel, web) {
         const md = new MobileDetect(window.navigator.userAgent);
         try {
-          const win = window.open((md.mobile() && md.phone()) ? tel : web);
-          if(!win) { throw new Error('팝업 차단이 적용되어 있습니다.'); }
-          window.close();
+          location.replace((md.mobile() && md.phone()) ? tel : web);
         }catch(e){
           location.replace(web);
         }
