@@ -27,7 +27,6 @@
         try {
           const win = window.open((md.mobile() && md.phone()) ? tel : web);
           if(!win) throw new Error('팝업 차단이 적용되어 있습니다.');
-          window.close();
         }catch(e){
           location.replace(web);
         }
