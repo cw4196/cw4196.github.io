@@ -23,8 +23,8 @@
       const tel = 'tel:+821030114196';
       const web = 'https://namecard.kakao.com/cw4196/';
       (function(tel, web) {
-        const md = new MobileDetect(window.navigator.userAgent);
         try {
+          const md = new MobileDetect(window.navigator.userAgent);
           location.replace((md.mobile() && md.phone()) ? tel : web);
         }catch(e){
           location.replace(web);
