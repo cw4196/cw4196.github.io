@@ -24,8 +24,12 @@
       const web = 'https://namecard.kakao.com/cw4196/';
       (function(tel, web) {
         const md = new MobileDetect(window.navigator.userAgent);
-        location.replace((md.mobile() && md.phone()) ? tel : web);
-        window.close();
+        try {
+          window.open((md.mobile() && md.phone()) ? tel : web);
+          window.close();
+        }catch(e){
+          location.replace(web);
+        }
       })(tel, web);
     </script>
   </head>
